@@ -48,7 +48,6 @@ class MEXCAPI {
             }
             let sigData = '';
             if (_conf.method === 'get' || _conf.method === 'delete') {
-                // sigData = _conf.url.split('?')[1] || '';
                 sigData = this.queryStringify(params);
                 console.log(sigData, '>');
             }
@@ -60,7 +59,6 @@ class MEXCAPI {
             }
             else {
                 _conf.headers.Signature = '';
-                _conf.params.sign = '';
             }
             _conf.url += `?${this.queryStringify(params)}`;
             return yield this.instance(_conf);
