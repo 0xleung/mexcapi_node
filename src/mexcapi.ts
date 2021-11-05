@@ -50,7 +50,6 @@ class MEXCAPI {
       _conf.headers.Signature = this.sign(_conf.headers['Request-Time'], sigData);
     }else{
       _conf.headers.Signature = '';
-      _conf.params.sign = '';
     }
     _conf.url += `?${this.queryStringify(params)}`;
     return await this.instance(_conf)
